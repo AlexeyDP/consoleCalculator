@@ -6,17 +6,28 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int num1 = 0;
-            int num2 = 0;
+            int num1;
+            int num2;
+            string operation;
 
             Console.WriteLine("Type number & press Enter");
-            num1 = Convert.ToInt32(Console.ReadLine());
-
-            do
+            var input1 = Console.ReadLine();
+            while (!int.TryParse(input1, out num1))
             {
-                
-            } while (b);
+                Console.WriteLine("It is not a valid number");
+                input1 = Console.ReadLine();
+            }
 
+            Console.WriteLine("Choose operation & press Enter");
+            operation = Console.ReadLine();
+
+            Console.WriteLine("Type number & press Enter");
+            var input2 = Console.ReadLine();
+            while (!int.TryParse(input2, out num2))
+            {
+                Console.WriteLine("It is not a valid number");
+                input2 = Console.ReadLine();
+            }
         }
     }
 }
