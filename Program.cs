@@ -8,7 +8,7 @@ namespace ConsoleApp1
         {
             int num1;
             int num2;
-            string operation;
+            string operationInput;
 
             Console.WriteLine("Type number & press Enter");
             var input1 = Console.ReadLine();
@@ -19,7 +19,7 @@ namespace ConsoleApp1
             }
 
             Console.WriteLine("Choose operation & press Enter");
-            operation = Console.ReadLine();
+            operationInput = Console.ReadLine();
 
             Console.WriteLine("Type number & press Enter");
             var input2 = Console.ReadLine();
