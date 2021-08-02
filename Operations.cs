@@ -4,24 +4,32 @@ namespace ConsoleApp1
 {
     public class Operations
     {
-        public void ApplyMultiplication(int a, int b)
+        public void ApplyMultiplication(double a, double b)
         {
-            Console.WriteLine("Apply Multiplication");
+            var result = a * b;
+            Console.WriteLine(result);
         }
 
-        public void ApplyDevision(int a, int b)
+        public void ApplyDevision(double a, double b)
         {
-            Console.WriteLine("Apply Devision");
+            if (b == 0)
+            {
+                throw new DivideByZeroException();
+            }
+            var result = a / b;
+            Console.WriteLine(result);
         }
 
-        public void ApplyAddition(int a, int b)
+        public void ApplyAddition(double a, double b)
         {
-            Console.WriteLine("Apply Addition");
+            var result = a + b;
+            Console.WriteLine(result);
         }
 
-        public void ApplySubtraction(int a, int b)
+        public void ApplySubtraction(double a, double b)
         {
-            Console.WriteLine("Apply Subtraction");
+            var result = a - b;
+            Console.WriteLine(result);
         }
     }
 }

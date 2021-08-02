@@ -6,28 +6,15 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int num1;
-            int num2;
-            string operationInput;
+            var parser = new ConsoleParser();
+            var processor = new CalculatorProcessor();
 
-            Console.WriteLine("Type number & press Enter");
-            var input1 = Console.ReadLine();
-            while (!int.TryParse(input1, out num1))
-            {
-                Console.WriteLine("It is not a valid number");
-                input1 = Console.ReadLine();
-            }
+            double num1 = parser.AskNumber();
+            Action<double, double> op = parser.AskMathOperator();
+            double num2 = parser.AskNumber();
 
-            Console.WriteLine("Choose operation & press Enter");
-            operationInput = Console.ReadLine();
-
-            Console.WriteLine("Type number & press Enter");
-            var input2 = Console.ReadLine();
-            while (!int.TryParse(input2, out num2))
-            {
-                Console.WriteLine("It is not a valid number");
-                input2 = Console.ReadLine();
-            }
+            processor.Process(num1, num2, op);
+            Console.ReadKey();
         }
     }
 }
